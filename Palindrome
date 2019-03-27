@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        if(isPalindrom(getInput())){
+            printText("Text is a Palindrome");
+        }else{
+            printText("Text is not a palindrome");
+        }
+    }
+
+    public static boolean isPalindrom(String text){
+        int n = text.length();
+        String reverseText = "";
+
+        for (int i = n-1; i >= 0; i--){
+            reverseText += text.charAt(i);
+        }
+        if (text.equals(reverseText)){
+            return true;
+        }
+        return false;
+    }
+
+    public static String getInput(){
+        Scanner scanner = new Scanner(System.in);
+        printText("Input text:");
+        return scanner.nextLine().trim().toLowerCase();
+    }
+
+    public static void printText(String text){
+        System.out.println(text);
+    }
+}
